@@ -47,18 +47,18 @@ nav button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
-  justify-items: center; /* centers items horizontally */
+  justify-items: center;
 }
 
 /* gallery item */
 .gallery-item {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertically center the image */
-  align-items: center;     /* horizontally center the image */
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   width: 100%;
-  min-height: 200px;       /* optional: ensures enough space for vertical centering */
+  min-height: 200px;
   border-radius: 6px;
   background-color: #ffffffa6;
   overflow: hidden;
