@@ -1,15 +1,37 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PictureGallery</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Picture Gallery</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <main>
+  <header>
+    <h1>PICTURE GALLERY</h1>
 
-  </main>
-  <script src="script.js"></script>
+    <!-- Category Filters -->
+    <nav>
+      <button data-category="all">All</button>
+      <button data-category="Animals">Animals</button>
+      <button data-category="Art">Art</button>
+      <button data-category="BlackWhite">Black & White</button>
+      <button data-category="Food">Food</button>
+    </nav>
+
+    <!-- Search input -->
+    <input type="text" id="searchInput" placeholder="Search images by tag...">
+  </header>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery"></section>
+
+  <!-- Modal for full images -->
+  <section id="modal" class="hidden">
+    <img id="modalImage" src="" alt="Full image">
+    <button id="closeModal">×</button>
+  </section>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

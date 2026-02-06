@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Animals 1",
+    "category": "Animals",
+    "tags": ["cat", "pet", "cute"],
+    "thumbnail": "images/thumbnail/animals/Thumbnail-Animals-1.jpg",
+    "full": "images/full/animals/Full-Animals-1.jpg"
+  },
+  {
+    "title": "Animals 2",
+    "category": "Animals",
+    "tags": ["dog", "pet", "cute"],
+    "thumbnail": "images/thumbnail/animals/Thumbnail-Animals-2.jpg",
+    "full": "images/full/animals/Full-Animals-2.jpg"
+  },
+  {
+    "title": "Animals 3",
+    "category": "Animals",
+    "tags": ["bird", "nature", "wild"],
+    "thumbnail": "images/thumbnail/animals/Thumbnail-Animals-3.jpg",
+    "full": "images/full/animals/Full-Animals-3.jpg"
+  },
+  {
+    "title": "Art 1",
+    "category": "Art",
+    "tags": ["painting", "modern", "abstract"],
+    "thumbnail": "images/thumbnail/art/Thumbnail-Art-1.jpg",
+    "full": "images/full/art/Full-Art-1.jpg"
+  },
+  {
+    "title": "Art 2",
+    "category": "Art",
+    "tags": ["sculpture", "museum", "classic"],
+    "thumbnail": "images/thumbnail/art/Thumbnail-Art-2.jpg",
+    "full": "images/full/art/Full-Art-2.jpg"
+  },
+  {
+    "title": "BlackWhite 1",
+    "category": "BlackWhite",
+    "tags": ["monochrome", "classic", "portrait"],
+    "thumbnail": "images/thumbnail/blackwhite/Thumbnail-BlackWhite-1.jpg",
+    "full": "images/full/blackwhite/Full-BlackWhite-1.jpg"
+  },
+  {
+    "title": "BlackWhite 2",
+    "category": "BlackWhite",
+    "tags": ["bw", "architecture", "street"],
+    "thumbnail": "images/thumbnail/blackwhite/Thumbnail-BlackWhite-2.jpg",
+    "full": "images/full/blackwhite/Full-BlackWhite-2.jpg"
+  },
+  {
+    "title": "Food 1",
+    "category": "Food",
+    "tags": ["pizza", "meal", "delicious"],
+    "thumbnail": "images/thumbnail/food/Thumbnail-Food-1.jpg",
+    "full": "images/full/food/Full-Food-1.jpg"
+  },
+  {
+    "title": "Food 2",
+    "category": "Food",
+    "tags": ["burger", "meal", "fastfood"],
+    "thumbnail": "images/thumbnail/food/Thumbnail-Food-2.jpg",
+    "full": "images/full/food/Full-Food-2.jpg"
+  }
+]
