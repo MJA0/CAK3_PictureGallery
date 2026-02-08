@@ -1,23 +1,25 @@
-import js from "@eslint/js";
 import globals from "globals";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  { 
-    files: ["**/*.{js,mjs,cjs}"], 
-    plugins: { js }, 
-    extends: ["js/recommended"], 
-    languageOptions: { 
+  {
+    // Apply to all JS files
+    files: ["**/*.js"],
+
+    languageOptions: {
+      sourceType: "module", // allows import/export
       globals: {
-        ...globals.browser,
-        ...globals.jest     // ← Lägger till Jest-globaler här!
-      }
-    } 
-  },
-  { 
-    files: ["**/*.js"], 
-    languageOptions: { 
-      sourceType: "script" 
-    } 
+        ...globals.browser, // window, document, etc.
+        ...globals.node,    // require, module, process
+        ...globals.jest,    // describe, test, expect, jest
+        fetch: "readonly",  // fetch API
+      },
+    },
+
+    rules: {
+      // your custom rules here, e.g.
+      "no-unused-vars": ["warn"],
+      "no-undef": ["error"],
+    },
   },
 ]);
