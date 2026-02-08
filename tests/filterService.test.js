@@ -35,6 +35,11 @@ describe("Gallery filtering functions", () => {
     expect(result).toHaveLength(images.length);
   });
 
+  test("filterBySearch returns empty array when no tags match", () => {
+    const result = filterBySearch(images, "nonexistent");
+    expect(result).toEqual([]);
+  });
+
   test("filterImages combines category and search filters correctly", () => {
     const result = filterImages(images, "Food", "pizza");
     expect(result).toHaveLength(1);
@@ -42,6 +47,6 @@ describe("Gallery filtering functions", () => {
     expect(result[0].tags).toContain("pizza");
 
     const result2 = filterImages(images, "Animals", "pizza");
-    expect(result2).toHaveLength(0); // no match
+    expect(result2).toHaveLength(0);
   });
 });

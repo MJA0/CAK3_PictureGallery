@@ -24,15 +24,16 @@ describe("dataService.fetchImages", () => {
     expect(result).toEqual(mockData);
   });
 
-  test("throws an error when fetch response is not ok", async () => {
+  test("throws error with correct message when response is not ok", async () => {
     fetch.mockResolvedValueOnce({
-      ok: false
+      ok: false,
+      json: async () => ({})
     });
 
     await expect(fetchImages()).rejects.toThrow("Could not load image");
   });
 
-  test("throws an error when fetch fails completely", async () => {
+  test("throws error when fetch fails completely", async () => {
     fetch.mockRejectedValueOnce(new Error("Network error"));
 
     await expect(fetchImages()).rejects.toThrow("Network error");
