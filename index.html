@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Picture Gallery</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header>
     <h1>PICTURE GALLERY</h1>
 
-    <!-- Category Filters -->
+    <!-- Nav: Category Filters -->
     <nav>
       <button data-category="all">All</button>
       <button data-category="Animals">Animals</button>
@@ -19,19 +19,19 @@
       <button data-category="Food">Food</button>
     </nav>
 
-    <!-- Search input -->
+    <!-- Input: Search -->
     <input type="text" id="searchInput" placeholder="Search images by tag...">
   </header>
 
-  <!-- Gallery Section -->
+  <!-- Section: Gallery -->
   <section id="gallery" class="gallery"></section>
 
-  <!-- Modal for full images -->
+  <!-- Section: Modal for full images -->
   <section id="modal" class="hidden">
     <img id="modalImage" src="" alt="Full image">
-    <button id="closeModal">×</button>
+    <button id="closeModal">X</button>
   </section>
 
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

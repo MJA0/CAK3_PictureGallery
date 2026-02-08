@@ -10,7 +10,7 @@ let currentSearch = "";
 
 async function loadImages() {
   try {
-    const res = await fetch("./data/images.json");
+    const res = await fetch("../data/images.json");
     if (!res.ok) throw new Error("Failed to load images.json");
     images = await res.json();
     renderGallery();

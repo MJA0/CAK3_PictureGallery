@@ -1,4 +1,4 @@
-const { filterByCategory, filterBySearch, filterImages } = require("../js/filterService");
+const { filterByCategory, filterBySearch, filterImages } = require("../js/filterService.js");
 
 const images = [
   { title: "Animals 1", category: "Animals", tags: ["cat", "pet"] },
