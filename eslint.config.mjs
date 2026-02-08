@@ -1,41 +1,25 @@
-// .eslintrc.js
-import js from "@eslint/js";
 import globals from "globals";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
-    ignores: ["coverage/**", "node_modules/**"],
-    files: ["src/**/*.js", "scripts/**/*.js"],
-    plugins: { js },
-    extends: ["js/recommended"],
-    languageOptions: {
-      sourceType: "module",
-      globals: {
-        ...globals.browser,
-        ...globals.node
-      }
-    },
-    rules: {
-      "no-unused-vars": ["warn"],
-      "no-redeclare": "error"
-    }
-  },
-  {
-    files: ["tests/**/*.js"],
-    plugins: { js },
-    extends: ["js/recommended"],
-    languageOptions: {
-      sourceType: "module",
-      globals: {
-        ...globals.node,
-        ...globals.jest
-      }
-    },
-    rules: {
-      "no-unused-vars": "warn",
-      "no-undef": "error"
-    }
-  }
-]);
+    // Apply to all JS files
+    files: ["**/*.js"],
 
+    languageOptions: {
+      sourceType: "module", // allows import/export
+      globals: {
+        ...globals.browser, // window, document, etc.
+        ...globals.node,    // require, module, process
+        ...globals.jest,    // describe, test, expect, jest
+        fetch: "readonly",  // fetch API
+      },
+    },
+
+    rules: {
+      // your custom rules here, e.g.
+      "no-unused-vars": ["warn"],
+      "no-undef": ["error"],
+    },
+  },
+]);

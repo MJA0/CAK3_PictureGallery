@@ -1,4 +1,4 @@
-const { fetchImages } = require("../js/dataService.js");
+const { fetchImages } = require ("../js/dataService");
 
 // Mock global fetch
 global.fetch = jest.fn();
@@ -37,5 +37,16 @@ describe("dataService.fetchImages", () => {
     fetch.mockRejectedValueOnce(new Error("Network error"));
 
     await expect(fetchImages()).rejects.toThrow("Network error");
+  });
+
+  test("throws error if response.json throws", async () => {
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => {
+        throw new Error("Invalid JSON");
+      }
+    });
+
+    await expect(fetchImages()).rejects.toThrow("Invalid JSON");
   });
 });
