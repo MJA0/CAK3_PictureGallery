@@ -49,4 +49,9 @@ describe("Gallery filtering functions", () => {
     const result2 = filterImages(images, "Animals", "pizza");
     expect(result2).toHaveLength(0);
   });
+
+  test("filterImages returns all images when category is all and search is empty", () => {
+    const result = filterImages(images, "all", "");
+    expect(result).toHaveLength(images.length);
+  });
 });

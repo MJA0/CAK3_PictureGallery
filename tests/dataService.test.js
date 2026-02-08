@@ -38,4 +38,15 @@ describe("dataService.fetchImages", () => {
 
     await expect(fetchImages()).rejects.toThrow("Network error");
   });
+
+  test("throws error if response.json throws", async () => {
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => {
+        throw new Error("Invalid JSON");
+      }
+    });
+
+    await expect(fetchImages()).rejects.toThrow("Invalid JSON");
+  });
 });

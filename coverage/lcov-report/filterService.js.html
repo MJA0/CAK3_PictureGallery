@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/16</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/10</span>
+                <span class='fraction'>7/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -89,31 +89,14 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">26x</span>
@@ -122,49 +105,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function (root, factory) {
-  if (typeof module !== "undefined" &amp;&amp; module.exports) {
-    // Node / Jest
-    module.exports = factory();
-  } else <span class="missing-if-branch" title="else path not taken" >E</span>{
-    // Browser
-<span class="cstat-no" title="statement not covered" >    root.filterService = factory();</span>
-  }
-})(typeof self !== "undefined" ? <span class="branch-0 cbranch-no" title="branch not covered" >self </span>: this, function () {
-  function filterByCategory(images, category) {
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">function filterByCategory(images, category) {
     if (category === "all") return images;
     return images.filter(img =&gt; img.category === category);
   }
 &nbsp;
-  // Filter by search term (tags)
-  function filterBySearch(images, query) {
-    if (!query) return images;
-    const q = query.toLowerCase();
-    return images.filter(img =&gt;
-      img.tags.some(tag =&gt; tag.toLowerCase().includes(q))
-    );
-  }
+// Filter by search term (tags)
+function filterBySearch(images, query) {
+  if (!query) return images;
+  const q = query.toLowerCase();
+  return images.filter(img =&gt;
+    img.tags.some(tag =&gt; tag.toLowerCase().includes(q))
+  );
+}
 &nbsp;
-  // Combined filter
-  function filterImages(images, category, query) {
-    return filterBySearch(filterByCategory(images, category), query);
-  }
+// Combined filter
+function filterImages(images, category, query) {
+  return filterBySearch(filterByCategory(images, category), query);
+}
 &nbsp;
-  return {
-    filterByCategory,
-    filterBySearch,
-    filterImages
-  };
-});
+<span class="missing-if-branch" title="else path not taken" >E</span>if (typeof module !== 'undefined' &amp;&amp; module.exports) {
+    module.exports = {
+  filterByCategory,
+  filterBySearch,
+  filterImages
+};
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -172,7 +148,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-08T20:17:23.970Z
+                at 2026-02-08T20:39:23.590Z
             </div>
         <script src="prettify.js"></script>
         <script>
