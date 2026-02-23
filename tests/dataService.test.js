@@ -1,4 +1,4 @@
-const { fetchImages } = require ("js/dataService");
+const { fetchImages } = require ("../js/dataService");
 
 // Mock global fetch
 global.fetch = jest.fn();
